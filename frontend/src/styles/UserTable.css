@@ -1,0 +1,69 @@
+/* styles/UserTable.css */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #2a2a2a;
+  color: white;
+  font-size: 14px;
+  min-width: 800px;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #444;
+}
+
+.user-table th {
+  background: #1e1e1e;
+  font-weight: 600;
+  color: #fff;
+}
+
+.user-table tr:nth-child(even) {
+  background: #2a2a2a;
+}
+
+.user-table tr:nth-child(odd) {
+  background: #333;
+}
+
+.user-table tr:hover {
+  background: #3a3a3a;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table-container {
+    margin: 10px 0;
+  }
+  
+  .user-table {
+    font-size: 12px;
+    min-width: 700px;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 8px 10px;
+  }
+  
+  .actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

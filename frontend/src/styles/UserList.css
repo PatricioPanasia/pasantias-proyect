@@ -1,0 +1,205 @@
+.users-container {
+  width: 100%;
+}
+
+/* ===== VISTA DE TABLA (Desktop) ===== */
+.table-view {
+  display: block;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #2a2a2a;
+  color: white;
+  font-size: 14px;
+  min-width: 800px;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #444;
+}
+
+.user-table th {
+  background: #1e1e1e;
+  font-weight: 600;
+  color: #fff;
+}
+
+.user-table tr:nth-child(even) {
+  background: #2a2a2a;
+}
+
+.user-table tr:nth-child(odd) {
+  background: #333;
+}
+
+.user-table tr:hover {
+  background: #3a3a3a;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== VISTA DE CARDS (Móviles) ===== */
+.cards-view {
+  display: none;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.user-card {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #444;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #444;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+.user-id {
+  color: #888;
+  font-size: 12px;
+  background: #1e1e1e;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.label {
+  color: #e0e0e0;
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 100px;
+}
+
+.value {
+  color: #fff;
+  font-size: 14px;
+  text-align: right;
+  word-break: break-word;
+  flex: 1;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* ===== Barra de búsqueda ===== */
+.search-container {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1e1e1e;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.search-input:focus {
+  border: 1px solid #888;
+}
+
+/* Responsive: en móviles ocupa todo el ancho */
+@media (max-width: 768px) {
+  .search-input {
+    max-width: 100%;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .user-table {
+    font-size: 13px;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-view {
+    display: none;
+  }
+  
+  .cards-view {
+    display: grid;
+  }
+  
+  .info-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .value {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-card {
+    padding: 16px;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .card-actions {
+    flex-direction: column;
+  }
+  
+  .label, .value {
+    font-size: 13px;
+  }
+}

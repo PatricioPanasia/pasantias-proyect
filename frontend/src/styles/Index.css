@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Paleta de colores */
+  --bg-main: #0E1116;
+  --bg-panel: #1A1F27;
+  --bg-glass: rgba(26, 31, 39, 0.6);
+  --blur-effect: blur(10px);
+
+  --accent-blue: #3B82F6;
+  --accent-blue-glow: rgba(59, 130, 246, 0.2);
+
+  --text-primary: #E5E9F0;
+  --text-secondary: #9AA0A6;
+
+  --status-success: #00C46C;
+  --status-error: #FF4E5A;
+  --status-warning: #FFC046;
+
+  --border-color: rgba(229, 233, 240, 0.1);
+
+  /* Tipografía */
+  --font-title: 'Poppins', 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background-color: var(--bg-main);
+  min-height: 100vh;
+}

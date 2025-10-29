@@ -1,0 +1,222 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  color: #fff;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.form-grid-three-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.form-field.half-width {
+  flex: 1;
+}
+
+.form-field label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #e0e0e0;
+  margin-bottom: 4px;
+}
+
+.field-info {
+  font-size: 12px;
+  color: #888;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.user-form input {
+  padding: 14px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #ffffff;
+  width: 100%;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.user-form input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: #333;
+}
+
+.user-form input.error {
+  border-color: #ef4444;
+  background: #3a2a2a;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+  min-height: 16px;
+}
+
+/* ===== ESTILOS PARA EL SELECTOR DE TELÉFONO ===== */
+.phone-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.country-select {
+  padding: 14px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.country-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.phone-prefix {
+  padding: 14px;
+  background: #333;
+  border: 2px solid #444;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  min-width: 70px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.phone-input-container input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===== BOTONES ===== */
+.form-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Autocompletar styles */
+.user-form input:-webkit-autofill,
+.user-form input:-webkit-autofill:hover,
+.user-form input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px #2a2a2a inset;
+  caret-color: #ffffff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 968px) {
+  .form-grid-three-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-form {
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .form-column {
+    gap: 15px;
+  }
+  
+  .phone-input-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .country-select, .phone-prefix {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .user-form input {
+    padding: 12px;
+  }
+  
+  .country-select, .phone-prefix {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-form {
+    padding: 16px;
+  }
+  
+  .form-field label {
+    font-size: 13px;
+  }
+  
+  .user-form input {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .country-select, .phone-prefix {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .form-actions {
+    gap: 10px;
+  }
+}
