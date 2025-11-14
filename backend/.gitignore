@@ -1,0 +1,48 @@
+# Dependencias
+node_modules/
+package-lock.json
+
+# Variables de entorno (CRÍTICO - NUNCA SUBIR)
+.env
+.env.local
+.env.production
+.env.development
+
+# Backups de base de datos
+backups/
+*.sql
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos del IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+
+# Certificados y claves privadas
+*.pem
+*.key
+*.cert
+*.crt
+ssl/
+
+# Datos sensibles
+secrets/
+credentials/

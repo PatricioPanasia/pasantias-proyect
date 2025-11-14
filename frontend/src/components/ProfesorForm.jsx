@@ -38,7 +38,8 @@ export default function ProfesorForm({ onSubmit, initialData, onCancelEdit, isEd
       const fechaNac = initialData.fecha_nacimiento ? new Date(initialData.fecha_nacimiento).toISOString().split("T")[0] : "";
       const tomaPos = initialData.toma_posesion ? new Date(initialData.toma_posesion).toISOString().split("T")[0] : "";
       setForm({ ...initialData, fecha_nacimiento: fechaNac, toma_posesion: tomaPos });
-    } else {
+    } else if (!isEditing) {
+      // Solo resetear si NO estamos editando
       setForm(initialState);
     }
   }, [initialData, isEditing]);
@@ -69,7 +70,11 @@ export default function ProfesorForm({ onSubmit, initialData, onCancelEdit, isEd
   };
 
   const handleCancel = () => {
-    onCancelEdit();
+    setForm(initialState);
+    setErrors({});
+    if (isEditing && onCancelEdit) {
+      onCancelEdit();
+    }
     navigate("/profesores");
   };
 

@@ -1,0 +1,356 @@
+/* Overlay del detalle */
+.detalle-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.detalle-container {
+  background: linear-gradient(
+    135deg,
+    rgba(25, 25, 45, 0.98),
+    rgba(15, 15, 30, 0.98)
+  );
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+}
+
+.close-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+/* Cabecera */
+.detalle-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.detalle-header h2 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.detalle-header .documento {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Secciones */
+.detalle-section {
+  margin-bottom: 2rem;
+}
+
+.detalle-section h3 {
+  color: var(--color-blue);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Estado Actual Card */
+.estado-actual-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.estado-badge-large {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.color-bar {
+  width: 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.estado-content {
+  flex: 1;
+}
+
+.estado-content h4 {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  margin: 0 0 1rem 0;
+}
+
+.estado-detalles {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.detalle-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.detalle-row.full {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detalle-row .label {
+  color: var(--text-secondary);
+  font-weight: 500;
+  min-width: 140px;
+}
+
+.detalle-row .value {
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.detalle-row .value.vencido {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.detalle-row .value.proximo {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.estado-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sin Estado */
+.sin-estado {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.sin-estado p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+/* Información General */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.info-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-item.full {
+  grid-column: 1 / -1;
+}
+
+.info-item .label {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.info-item .value {
+  display: block;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Historial Timeline */
+.historial-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item.active::before {
+  background: linear-gradient(to bottom, var(--color-blue), rgba(59, 130, 246, 0.3));
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2.5rem;
+  top: 0.25rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid rgba(20, 20, 35, 1);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.timeline-item.active .timeline-marker {
+  width: 20px;
+  height: 20px;
+  left: -2.7rem;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item.active .timeline-content {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.timeline-content h4 {
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.timeline-dates {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.timeline-motivo {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  margin: 0.5rem 0 0 0;
+  line-height: 1.5;
+}
+
+.timeline-anterior {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin: 0.5rem 0 0 0;
+}
+
+.no-historial {
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.75rem;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* Footer */
+.detalle-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detalle-container {
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .detalle-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .estado-actions {
+    flex-direction: column;
+  }
+
+  .estado-actions button {
+    width: 100%;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-item.full {
+    grid-column: 1;
+  }
+
+  .historial-timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item::before {
+    left: -1.5rem;
+  }
+
+  .timeline-marker {
+    left: -2rem;
+  }
+
+  .timeline-item.active .timeline-marker {
+    left: -2.2rem;
+  }
+}
